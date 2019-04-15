@@ -1,0 +1,52 @@
+# Binary data types
+*.aif binary
+*.aifc binary
+*.aiff binary
+*.au binary
+*.bmp binary
+*.exe binary
+*.icns binary
+*.gif binary
+*.ico binary
+*.jpg binary
+*.pck binary
+*.png binary
+*.psd binary
+*.tar binary
+*.wav binary
+*.whl binary
+*.zip binary
+
+
+# CRLF files
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+*.py text eol=crlf
+*.json text eol=crlf
+*.sln text eol=crlf
+*.vcxproj* text eol=crlf
+*.props text eol=crlf
+*.proj text eol=crlf
+PCbuild/readme.txt text eol=crlf
+PC/readme.txt text eol=crlf
+
+# Generated files
+# https://github.com/github/linguist#generated-code
+Include/graminit.h          linguist-generated=true
+Python/graminit.h           linguist-generated=true
+Modules/clinic/*.h          linguist-generated=true
+Objects/clinic/*.h          linguist-generated=true
+PC/clinic/*.h               linguist-generated=true
+Python/clinic/*.h           linguist-generated=true
+Python/importlib.h          linguist-generated=true
+Python/importlib_external.h linguist-generated=true
+Include/Python-ast.h        linguist-generated=true
+Python/Python-ast.c         linguist-generated=true
+Include/opcode.h            linguist-generated=true
+Python/opcode_targets.h     linguist-generated=true
+Objects/typeslots.inc       linguist-generated=true
+Modules/unicodedata_db.h    linguist-generated=true
+Doc/library/token-list.inc  linguist-generated=true
+Include/token.h             linguist-generated=true
+Lib/token.py                linguist-generated=true
+Parser/token.c              linguist-generated=true
