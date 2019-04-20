@@ -1,5 +1,5 @@
 {
     "restructuredtext.confPath": "",
-    "python.pythonPath": "activate\\Scripts\\python.exe",
+    "python.pythonPath": "C:\\Program Files (x86)\\Python37-32\\python.exe",
     "python.linting.pylintEnabled": true
 }

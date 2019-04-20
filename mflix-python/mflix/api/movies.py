@@ -141,6 +141,9 @@ def api_search_movies_faceted():
         (movies, total_num_entries) = get_movies_faceted(
             filters, page, MOVIES_PER_PAGE)
 
+        print(total_num_entries)
+        #print(movies)
+
         response = {
             "movies": movies.get('movies'),
             "facets":  {

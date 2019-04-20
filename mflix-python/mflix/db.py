@@ -98,9 +98,11 @@ def get_movies_faceted(filters, page, movies_per_page):
     pipeline = []
 
     if "cast" in filters:
-        pipeline.extend([{
+        pipeline.extend([
+        {
             "$match": {"cast": {"$in": filters.get("cast")}}
-        }, {
+        }, 
+        {
             "$sort": {sort_key: DESCENDING}
         }])
     else:
@@ -154,12 +156,14 @@ def get_movies_faceted(filters, page, movies_per_page):
 
     # TODO: Faceted Search
     # Add the necessary stages to the pipeline variable in the correct order.
-    pipeline = []
+    #pipeline = []
+
+    pipeline.extend([skip_stage,limit_stage,facet_stage])
 
     try:
         movies = list(db.movies.aggregate(pipeline, allowDiskUse=True))[0]
-        count = list(db.movies.aggregate(counting, allowDiskUse=True))[
-            0].get("count")
+        count = list(db.movies.aggregate(counting, allowDiskUse=True))[0].get("count")
+        #print(count)
         return (movies, count)
     except OperationFailure:
         raise OperationFailure(
@@ -237,7 +241,7 @@ def get_movies(filters, page, movies_per_page):
 
     # TODO: Paging
     # Use the cursor to only return the movies that belong on the current page.
-    movies = cursor.limit(movies_per_page)
+    movies = cursor.skip(page * movies_per_page).limit(movies_per_page)
 
     return (list(movies), total_num_movies)
 
