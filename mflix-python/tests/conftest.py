@@ -14,3 +14,5 @@ def app():
     app.config['SECRET_KEY'] = config['TEST']['SECRET_KEY']
     app.config['MFLIX_DB_URI'] = config['TEST']['MFLIX_DB_URI']
     return app
+
+	
